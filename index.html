@@ -1,3 +1,9 @@
+<script>
+  var password = prompt("This page is protected. Enter the password to continue:");
+  if (password !== "yaoyao") {
+    document.body.innerHTML = "<h2 style='color:red;text-align:center;margin-top:20%'>Access Denied</h2>";
+  }
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
