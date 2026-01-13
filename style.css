@@ -115,3 +115,12 @@ audio:hover {
   box-shadow: 0 0 25px rgba(255, 182, 193, 0.5), 0 12px 24px rgba(0,0,0,0.1);
 }
 
+@media (max-width: 768px) {
+  body {
+    background-image: url('https://pbs.twimg.com/media/G6_5_tRbAAAsiyi?format=jpg&name=large');
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
