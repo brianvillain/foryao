@@ -128,4 +128,9 @@ audio:hover {
     background-position: center;
   }
 }
+@media (max-width: 768px) {
+  .heart-container {
+    display: none;
+  }
+}
 
