@@ -132,18 +132,32 @@ audio:hover {
   .heart-container {
     display: none;
   }
-.gift-link {
+.gift-button {
   display: inline-block;
-  margin-top: 10px;
-  font-size: 1.1rem;
-  color: #ffb6c1;
-  text-decoration: none;
+  margin-top: 20px;
+  padding: 14px 24px;
+  background: linear-gradient(145deg, #ffb6c1, #ffc0cb);
+  color: #520027;
   font-weight: bold;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  animation: pulse-glow 2s infinite;
 }
 
-.gift-link:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #ff69b4;
+.gift-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 182, 193, 0.8);
+  cursor: pointer;
 }
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 12px rgba(255, 192, 203, 0.4); }
+  50% { box-shadow: 0 0 24px rgba(255, 192, 203, 0.9); }
+  100% { box-shadow: 0 0 12px rgba(255, 192, 203, 0.4); }
+}
+
 
