@@ -160,4 +160,10 @@ audio:hover {
   100% { box-shadow: 0 0 12px rgba(255, 192, 203, 0.4); }
 }
 
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
 
