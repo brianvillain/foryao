@@ -1,170 +1,155 @@
-/* Reset & font setup */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Merriweather', serif;
-  color: #fff;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
   background-image: url('https://pbs.twimg.com/media/G9BMjL-a8AE4sxe?format=jpg&name=large');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  position: relative;
-  min-height: 100vh;
-  padding: 50px 20px;
+  color: white;
+  overflow-x: hidden;
 }
 
-body {
-  position: relative;
-  z-index: 0; /* ← THIS LINE */
-}
-
-.overlay {
+.heart-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(10, 10, 20, 0.6);
-  z-index: -1;
-}
-
-main {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.content-box {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 30px;
-  border-radius: 15px;
-  margin-bottom: 50px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.content-box h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  text-align: center;
-  color: #ffcce0;
-  transition: text-shadow 0.3s ease;
-}
-
-.content-box h1:hover {
-  text-shadow: 0 0 10px #ff8dd6, 0 0 20px #ff8dd6;
-}
-
-.content-box p {
-  font-size: 1.1rem;
-  text-align: justify;
-  margin-bottom: 20px;
-  transition: text-shadow 0.3s ease;
-}
-
-.content-box p:hover {
-  text-shadow: 0 0 8px #ffffff;
-}
-
-/* Fade-in effect */
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Side art images */
-.side-image {
-  position: fixed;
-  top: 20%;
-  width: 200px;
-  opacity: 0.7;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
   z-index: 0;
+  overflow: hidden;
 }
 
-.side-image.left {
-  left: 20px;
+.heart {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-image: url('https://em-content.zobj.net/thumbs/160/twitter/322/red-heart_2764-fe0f.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: float 10s linear infinite;
+  opacity: 0.7;
 }
 
-.side-image.right {
-  right: 20px;
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 30%; animation-delay: 2s; }
+.heart:nth-child(3) { left: 50%; animation-delay: 4s; }
+.heart:nth-child(4) { left: 70%; animation-delay: 6s; }
+.heart:nth-child(5) { left: 90%; animation-delay: 8s; }
+
+@keyframes float {
+  0% { top: -10%; transform: translateX(0) rotate(0deg); opacity: 0.8; }
+  50% { transform: translateX(20px) rotate(180deg); }
+  100% { top: 110%; transform: translateX(-20px) rotate(360deg); opacity: 0; }
 }
 
-@media (max-width: 900px) {
-  .side-image {
-    display: none;
-  }
-}
-audio {
-  display: block;
-  margin: 20px auto;
-  padding: 15px;
-  width: 80%;
-  max-width: 450px;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255, 192, 203, 0.25), 0 8px 16px rgba(0,0,0,0.1);
-  border: 2px solid #ffc0cb;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+#cover-screen {
+  text-align: center;
+  padding-top: 20vh;
 }
 
-audio:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px rgba(255, 182, 193, 0.5), 0 12px 24px rgba(0,0,0,0.1);
+#cover-screen h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #ffcce0;
 }
 
-@media (max-width: 768px) {
-  body {
-    background-image: url('https://pbs.twimg.com/media/G8SNwqeaAAAdXuY?format=jpg&name=large');
-    background-attachment: scroll;
-    background-size: cover;
-    background-position: center;
-  }
+#open-book-btn {
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ff66cc, #ff99cc);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 153, 204, 0.6);
+  transition: all 0.3s ease;
 }
-@media (max-width: 768px) {
-  .heart-container {
-    display: none;
-  }
-.button-wrapper {
+
+#open-book-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 153, 204, 0.9), 0 0 10px #fff;
+  text-shadow: 0 0 5px #fff;
+}
+
+#book {
+  width: 90%;
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  position: relative;
+}
+
+.page {
+  display: none;
+  animation: fade 0.5s ease;
+}
+
+.page h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: #ffb6d9;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.page-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.nav-buttons {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 25px;
-  width: 100%;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+button#prev-btn,
+button#next-btn {
+  padding: 12px 24px;
+  background: #ff99cc;
+  border: none;
+  border-radius: 40px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #ff66aa;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.button-wrapper {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .gift-button {
-  background-color: #ff80bf;
-  color: #fff;
+  display: inline-block;
+  background: linear-gradient(135deg, #ff66cc, #ff99cc);
+  color: white;
   padding: 12px 24px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 25px;
+  border-radius: 40px;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  transition: 0.3s ease;
 }
 
 .gift-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.8);
+  background: linear-gradient(135deg, #ff4da6, #ff85b3);
+  box-shadow: 0 0 20px #fff;
 }
-
-
-@keyframes pulse-glow {
-  0% { box-shadow: 0 0 12px rgba(255, 192, 203, 0.4); }
-  50% { box-shadow: 0 0 24px rgba(255, 192, 203, 0.9); }
-  100% { box-shadow: 0 0 12px rgba(255, 192, 203, 0.4); }
-}
-
