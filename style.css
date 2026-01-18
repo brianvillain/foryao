@@ -153,3 +153,20 @@ button:hover {
   background: linear-gradient(135deg, #ff4da6, #ff85b3);
   box-shadow: 0 0 20px #fff;
 }
+audio {
+  display: block;
+  margin: 20px auto;
+  padding: 15px;
+  width: 80%;
+  max-width: 450px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 192, 203, 0.25), 0 8px 16px rgba(0,0,0,0.1);
+  border: 2px solid #ffc0cb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+audio:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 182, 193, 0.5), 0 12px 24px rgba(0,0,0,0.1);
+}
