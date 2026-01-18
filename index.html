@@ -1,11 +1,3 @@
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var password = prompt("This page is protected. Enter the password to continue:");
-    if (password !== "Yaoyao830") {
-      document.write("<h2 style='text-align:center; color: red; margin-top: 20%; font-family: sans-serif;'>Access Denied</h2>");
-    }
-  });
-</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,137 +6,29 @@
   <title>For Yao</title>
 
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/256/4289/4289411.png">
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
-
-  <style>
-    .content-box ul {
-      margin-top: 10px;
-      margin-bottom: 25px;
-      padding-left: 20px;
-    }
-
-    .content-box ul li {
-      margin-bottom: 10px;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-
-    .content-box ul li:hover {
-      color: #fff;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
-      cursor: default;
-    }
-
-    .heart-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .heart {
-      position: absolute;
-      width: 24px;
-      height: 24px;
-      background-image: url('https://em-content.zobj.net/thumbs/160/twitter/322/red-heart_2764-fe0f.png');
-      background-repeat: no-repeat;
-      background-size: contain;
-      animation: float 10s linear infinite;
-      opacity: 0.7;
-    }
-
-    .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .heart:nth-child(2) { left: 30%; animation-delay: 2s; }
-    .heart:nth-child(3) { left: 50%; animation-delay: 4s; }
-    .heart:nth-child(4) { left: 70%; animation-delay: 6s; }
-    .heart:nth-child(5) { left: 90%; animation-delay: 8s; }
-
-    @keyframes float {
-      0% {
-        top: -10%;
-        transform: translateX(0) rotate(0deg);
-        opacity: 0.8;
-      }
-      50% {
-        transform: translateX(20px) rotate(180deg);
-      }
-      100% {
-        top: 110%;
-        transform: translateX(-20px) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    .content-box {
-      position: relative;
-      z-index: 2;
-    }
-    .button-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 25px;
-}
-
-
-.gift-button {
-  display: inline-block;
-  background: linear-gradient(135deg, #ff66cc, #ff99cc, #ffd6e7);
-  color: white;
-  font-weight: bold;
-  padding: 14px 28px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 0 15px rgba(255, 153, 204, 0.6);
-  transition: all 0.3s ease-in-out;
-  position: relative;
-}
-
-.gift-button:hover {
-  background: linear-gradient(135deg, #ff4da6, #ff85b3);
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255, 153, 204, 0.9), 0 0 10px #fff;
-  text-shadow: 0 0 5px #fff;
-}
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
+  <!-- Floating Hearts -->
   <div class="heart-container">
-    <div class="heart"></div>
-    <div class="heart"></div>
-    <div class="heart"></div>
-    <div class="heart"></div>
-    <div class="heart"></div>
+    <div class="heart"></div><div class="heart"></div><div class="heart"></div><div class="heart"></div><div class="heart"></div>
   </div>
 
-  <h1>Hello, Yao 💖</h1>
-  <p>This is something I made just for you.</p>
-</body>
-</html>
+  <!-- Welcome Message + Cover -->
+  <div id="cover-screen">
+    <h1>Hello, Yao 💖</h1>
+    <p>This is something I made just for you.</p>
+    <button id="open-book-btn">📖 Click to open the book 📖</button>
+  </div>
 
-
-  <div class="overlay"></div>
-
-  <main>
-    <div class="heart-container">
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-</div>
-
-    <section class="content-box fade-in">
+  <!-- Book Container -->
+  <div id="book" class="hidden">
+    <div class="page" id="page-1">
       <h1>Our Story</h1>
-      <p>So, when you read this, it'll have been nearly three months since we first knew each other, right?</p>
+      <div class="page-content">
+              <p>So, when you read this, it'll have been nearly three months since we first knew each other, right?</p>
         <p>On November 21, 2025, I came across your stream for the first time. Yeah, I guess you know I was like all the other crypto bros who were just there for the airdrop, heh—at least before I knew you would happen.
           Honestly, before you, I never watched anyone stream themselves playing games lol, I’d rather just play them myself. But the moment I heard your voice, I already liked it. I remember that day: I only tipped you 18,888 ZTX, which was around $10 at the time.</p>
 <p>Then came November 22. I didn’t know what hit me. I checked Creator’s server and saw your thank-you message after the stream. Normally, I barely touched Discord unless I needed info about some project. But your message? It was very, very genuine.
@@ -160,12 +44,14 @@ Yeah. I knew it then. I missed you too. Still do. I haven’t stopped missing yo
 <p>Just so we’re clear: everything I’ve done for you? It’s always been voluntary. I’m not trying to buy your attention. All I’ve ever wanted… is to make you happy. And support you.
 
 Yes, I caught feelings fast. I just didn’t say it out loud. Not because I was unsure… but because I didn’t wanna scare you away.</p>
-    </section>
 
-   <section class="content-box fade-in">
-  <h1>What I Know About You</h1>
+      </div>
+    </div>
 
-  <p>So, I’ve learned a lot about you—thanks to all the TMIs you’ve shared with me. And even more through the tiny things you’ve said, without even realizing how much they stuck with me.</p>
+    <div class="page hidden" id="page-2">
+      <h1>What I Know About You</h1>
+      <div class="page-content">
+          <p>So, I’ve learned a lot about you—thanks to all the TMIs you’ve shared with me. And even more through the tiny things you’ve said, without even realizing how much they stuck with me.</p>
 
   <p>I think you know I’m a pretty observant guy. I’ve paid a lot of attention to you. I’ve got a good memory, but I even took notes—just so I wouldn’t forget.</p>
 
@@ -218,21 +104,14 @@ Yes, I caught feelings fast. I just didn’t say it out loud. Not because I was 
   <p style="margin-top: 30px; font-style: italic;">
     I know I probably missed a few things—maybe I didn’t hear them right—but I’d love to keep learning more about you every day.
   </p>
-</section>
 
-    <div class="heart-container">
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-</div>
+      </div>
+    </div>
 
-    <section class="content-box fade-in">
+    <div class="page hidden" id="page-3">
       <h1>What I Like About You</h1>
-      <p>
-
-  <p>I’ve liked many things about you. But like I said, my first impression of you was your beautiful voice. It was like music to my ears.</p>
+      <div class="page-content">
+        <p>I’ve liked many things about you. But like I said, my first impression of you was your beautiful voice. It was like music to my ears.</p>
 
   <p>The second thing, as you already know, was how genuine you are. Yeah, I knew you were genuine from day one.</p>
 
@@ -267,51 +146,37 @@ Because honestly? I wasn’t even half that hardworking when I was your age.</p>
 But I know I’ve caught feelings for the girl behind the screen—her personality, her mind, her energy, her soul.
 
 So those things don’t really matter to me anymore.</p>
-</section>
-</p>
-    </section>
 
-    <section class="content-box fade-in">
+      </div>
+    </div>
+
+    <div class="page hidden" id="page-4">
       <h1>My Final Message to You</h1>
-      <p><audio controls>
-  <source src="finalmessage.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-</p>
-    </section>
+      <div class="page-content">
+        <audio controls>
+          <source src="finalmessage.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
 
-     <section class="content-box fade-in">
-  <h1>P.S.</h1>
-  <p>
-    Pretend this is my Valentine's flower bouquet for you. I'll get you a real one when we meet in person.
-    <br><br>
-   <div class="button-wrapper">
-  <a href="https://foryao.xyz/B&Y.jpg" target="_blank" class="gift-button">🌙 Click to reveal your Valentine’s gift 🌙</a>
-</div>
+    <div class="page hidden" id="page-5">
+      <h1>P.S.</h1>
+      <div class="page-content">
+        <p>Pretend this is my Valentine's flower bouquet for you. I'll get you a real one when we meet in person.</p>
+        <div class="button-wrapper">
+          <a href="https://foryao.xyz/B&Y.jpg" target="_blank" class="gift-button">🌙 Click to reveal your Valentine’s gift 🌙</a>
+        </div>
+      </div>
+    </div>
 
-  </p>
-</section>
+    <div class="nav-buttons">
+      <button id="prev-btn">← Back</button>
+      <button id="next-btn">Next →</button>
+    </div>
+  </div>
 
-  </main>
-
+  <!-- JS -->
+  <script src="book.js"></script>
 </body>
-  <script>
-  const faders = document.querySelectorAll('.fade-in');
-
-  const appearOptions = {
-    threshold: 0.3
-  };
-
-  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    });
-  }, appearOptions);
-
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-  });
-</script>
 </html>
