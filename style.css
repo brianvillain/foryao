@@ -1,13 +1,85 @@
-body {
+/* Reset & font setup */
+* {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  color: #fff;
   background-image: url('https://pbs.twimg.com/media/G9BMjL-a8AE4sxe?format=jpg&name=large');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  color: white;
-  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 20px;
 }
+
+body {
+  position: relative;
+  z-index: 0; /* ← THIS LINE */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 20, 0.6);
+  z-index: -1;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.content-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.content-box h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #ffcce0;
+  transition: text-shadow 0.3s ease;
+}
+
+.content-box h1:hover {
+  text-shadow: 0 0 10px #ff8dd6, 0 0 20px #ff8dd6;
+}
+
+.content-box p {
+  font-size: 1.1rem;
+  text-align: justify;
+  margin-bottom: 20px;
+  transition: text-shadow 0.3s ease;
+}
+
+.content-box p:hover {
+  text-shadow: 0 0 8px #ffffff;
+}
+
+/* Fade-in effect */
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .heart-container {
   position: fixed;
