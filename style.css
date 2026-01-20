@@ -251,3 +251,14 @@ audio:hover {
   color: #ffcad4;
   text-shadow: 0 0 8px #ffcad4;
 }
+
+.page-content p:hover {
+  text-shadow: 0 0 8px #ffffff;
+  color: #fff;
+  cursor: default;
+}
+.page-content li:hover {
+  text-shadow: 0 0 8px #ffffff;
+  color: #fff;
+  cursor: default;
+}
