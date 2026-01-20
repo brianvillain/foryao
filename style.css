@@ -262,3 +262,7 @@ audio:hover {
   color: #fff;
   cursor: default;
 }
+.page h1:hover {
+  text-shadow: 0 0 10px #ff8dd6, 0 0 20px #ff8dd6;
+  cursor: default;
+}
