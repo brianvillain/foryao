@@ -170,24 +170,3 @@ audio:hover {
   transform: scale(1.03);
   box-shadow: 0 0 25px rgba(255, 182, 193, 0.5), 0 12px 24px rgba(0,0,0,0.1);
 }
-#cover-screen {
-  text-align: center;
-  padding-top: 20vh;
-  position: relative;
-  z-index: 2;
-}
-
-/* Add a soft background behind the front text ONLY */
-#cover-screen::before {
-  content: "";
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 40%;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 20px;
-  z-index: -1;
-  box-shadow: 0 0 30px rgba(0,0,0,0.5);
-}
