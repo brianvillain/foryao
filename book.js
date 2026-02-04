@@ -30,9 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
     currentPage = index;
   }
 
-  openBtn.addEventListener("click", () => {
-    showPage(0);
-  });
+openBtn.addEventListener("click", () => {
+  showPage(0);
+  document.getElementById("cover-screen").style.display = "none"; // 👈 hides the cover after click
+});
 
   nextBtn.addEventListener("click", () => {
     if (currentPage === pages.length - 1) {
