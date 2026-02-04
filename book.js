@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 openBtn.addEventListener("click", () => {
   showPage(0);
-  document.getElementById("cover-screen").style.display = "none"; // 👈 hides the cover after click
 });
 
   nextBtn.addEventListener("click", () => {
