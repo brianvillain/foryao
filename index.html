@@ -130,7 +130,6 @@
   cursor: default;
 }
 .cover-message {
-  bottom: 5vh;
   background-color: rgba(0, 0, 0, 0.4); /* soft dark overlay */
   padding: 20px 30px;
   border-radius: 20px;
@@ -174,6 +173,15 @@
   transform: translateY(-2px);
   text-shadow: 0 0 5px #ffb6d9;
   cursor: pointer;
+}
+.cover-container {
+  position: absolute;
+  bottom: 5vh; /* adjust this to move both boxes together */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
   </style>
