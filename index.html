@@ -11,6 +11,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
 
   <style>
+    #cover-screen {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+}
+
+.cover-message {
+  position: absolute;
+  bottom: 120px; /* adjust this to move higher/lower */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent dark background */
+  padding: 15px 30px;
+  border-radius: 20px;
+  color: white;
+  font-size: 24px;
+  font-family: 'Great Vibes', cursive; /* use your preferred fancy font */
+  z-index: 2;
+}
+
+.note-button {
+  position: absolute;
+  bottom: 50px; /* adjust to control vertical spacing */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
     .content-box ul {
       margin-top: 10px;
       margin-bottom: 25px;
