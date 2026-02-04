@@ -176,12 +176,13 @@
 }
 .cover-container {
   position: absolute;
-  bottom: 5vh; /* adjust this to move both boxes together */
+  top: 55vh; /* Moved down to lower part of screen */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 10;
 }
 
   </style>
@@ -198,14 +199,17 @@
 
   <!-- Welcome Message + Cover -->
 <div id="cover-screen">
-  <div class="cover-message">
-    <h1>Hello, Yao 💖</h1>
-    <p>This is something I made just for you.</p>
-  </div>
-  <div class="note-button">
-    <button id="open-book-btn">I wanna say something...So, are you ready to hear my thoughts?</button>
+  <div class="cover-container">
+    <div class="cover-message">
+      <h1>Hello, Yao 💖</h1>
+      <p>This is something I made just for you.</p>
+    </div>
+    <div class="note-button">
+      <button id="open-book-btn">I wanna say something...So, are you ready to hear my thoughts?</button>
+    </div>
   </div>
 </div>
+
 
 
   <!-- Book Container -->
