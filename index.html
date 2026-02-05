@@ -184,6 +184,21 @@
   align-items: center;
   z-index: 10;
 }
+.voice-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.voice-wrapper audio {
+  max-width: 300px;
+}
+
+.voice-wrapper .voice-chibi {
+  width: 100px;
+  height: auto;
+}
 
   </style>
 </head>
@@ -344,15 +359,19 @@ So those things don’t really matter to me anymore.</p>
     <div class="page hidden" id="page-4">
       <h1>What I Want to Say in My Own Voice</h1>
 <div class="page-content">
-  <img src="covien2.png" alt="Chibi Left" class="chibi chibi-left">
-  
-  <audio controls>
-    <source src="confession.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-  
-  <img src="covien1.png" alt="Chibi Right" class="chibi chibi-right">
+
+  <div class="voice-wrapper">
+    <img src="covien2.png" class="voice-chibi">
+
+    <audio controls>
+      <source src="confession.mp3" type="audio/mpeg">
+    </audio>
+
+    <img src="covien1.png" class="voice-chibi">
+  </div>
+
 </div>
+
 
     <div class="page hidden" id="page-5">
       <h1>Happy Valentine's Day</h1>
