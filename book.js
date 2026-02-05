@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
     book.classList.add("hidden");
     cover.classList.remove("hidden");
     currentPage = -1;
+    nextBtn.style.display = "none";
+prevBtn.style.display = "none";
       document.querySelector('.nav-buttons').style.display = 'none';
   }
 
@@ -29,7 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
     cover.classList.add("hidden");
     book.classList.remove("hidden");
     currentPage = index;
-
+    nextBtn.style.display = "block";
+prevBtn.style.display = "block";
   document.querySelector('.nav-buttons').style.display = 'flex';
   }
 
