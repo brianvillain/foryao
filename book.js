@@ -10,40 +10,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const openBtn = document.getElementById("open-book-btn");
 
   const pages = document.querySelectorAll(".page");
-  const navButtons = document.querySelector('.nav-buttons');
   const nextBtn = document.getElementById("next-btn");
   const prevBtn = document.getElementById("prev-btn");
 
   let currentPage = -1; // -1 = cover
 
-  function hideAllPages() {
-    pages.forEach(p => p.classList.add("hidden"));
-  }
-
   function showCover() {
-    hideAllPages();
+    pages.forEach(p => p.style.display = "none");
     book.classList.add("hidden");
     cover.classList.remove("hidden");
     currentPage = -1;
-    navButtons.classList.add("hidden");
+    nextBtn.style.display = "none";
+prevBtn.style.display = "none";
+      document.querySelector('.nav-buttons').style.display = 'none';
   }
 
   function showPage(index) {
-    hideAllPages();
-    pages[index].classList.remove("hidden");
+    pages.forEach(p => p.style.display = "none");
+    pages[index].style.display = "block";
     cover.classList.add("hidden");
     book.classList.remove("hidden");
     currentPage = index;
-    navButtons.classList.remove("hidden");
+    nextBtn.style.display = "block";
+prevBtn.style.display = "block";
+  document.querySelector('.nav-buttons').style.display = 'flex';
   }
 
-  openBtn.addEventListener("click", () => {
-    showPage(0);
-  });
+openBtn.addEventListener("click", () => {
+  showPage(0);
+});
 
   nextBtn.addEventListener("click", () => {
     if (currentPage === pages.length - 1) {
-      showCover();
+      showCover(); // loop back to cover
     } else {
       showPage(currentPage + 1);
     }
@@ -51,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   prevBtn.addEventListener("click", () => {
     if (currentPage === 0) {
-      showCover();
+      showCover(); // back from first page
     } else {
       showPage(currentPage - 1);
     }
