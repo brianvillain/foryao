@@ -184,6 +184,24 @@
   align-items: center;
   z-index: 10;
 }
+.voice-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.voice-chibi {
+  width: 160px;
+  height: auto;
+}
+
+.voice-audio {
+  max-width: 320px;
+}
 
   </style>
 </head>
@@ -346,23 +364,14 @@ So those things don’t really matter to me anymore.</p>
   <h1>What I Want to Say in My Own Voice</h1>
 
  <div class="page-content">
-
-  <div style="display:flex; justify-content:center; align-items:center; gap:30px;">
-
-    <img src="covien2.PNG" style="width:160px; height:auto;">
-
-    <audio controls style="max-width:320px;"></audio> 
-    <audio controls style="max-width:320px;">
-  <source src="confession.mp3" type="audio/mpeg">
-</audio>
-
-    <img src="covien1.PNG" style="width:160px; height:auto;">
-
+  <div class="voice-wrapper">
+    <img src="covien2.PNG" class="voice-chibi">
+    <audio controls class="voice-audio">
+      <source src="confession.mp3" type="audio/mpeg">
+    </audio>
+    <img src="covien1.PNG" class="voice-chibi">
   </div>
-
 </div>
-
-
 
 
     <div class="page hidden" id="page-5">
