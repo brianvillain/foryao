@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentPage = -1;
     nextBtn.style.display = "none";
 prevBtn.style.display = "none";
+      document.querySelector('.nav-buttons').style.display = 'none';
   }
 
   function showPage(index) {
@@ -32,7 +33,7 @@ prevBtn.style.display = "none";
     currentPage = index;
     nextBtn.style.display = "block";
 prevBtn.style.display = "block";
-
+  document.querySelector('.nav-buttons').style.display = 'flex';
   }
 
 openBtn.addEventListener("click", () => {
