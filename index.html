@@ -184,15 +184,14 @@
   align-items: center;
   z-index: 10;
 }
-    .nav-buttons {
-  position: relative;
-  z-index: 99;
-  display: flex;
+.nav-buttons {
+  display: none; /* hidden by default */
   justify-content: space-between;
   padding: 20px 40px;
   max-width: 600px;
   margin: 30px auto;
 }
+
 
   </style>
 </head>
@@ -396,11 +395,10 @@ So those things don’t really matter to me anymore.</p>
       </div>
     </div>
 
-    <div class="nav-buttons">
-      <button id="prev-btn">← Back</button>
-      <button id="next-btn">Next →</button>
-    </div>
-  </div>
+<div class="nav-buttons">
+  <button id="prev-btn">← Back</button>
+  <button id="next-btn">Next →</button>
+</div>
 
   <!-- JS -->
   <script src="book.js"></script>
