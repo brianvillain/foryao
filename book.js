@@ -12,39 +12,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const pages = document.querySelectorAll(".page");
   const nextBtn = document.getElementById("next-btn");
   const prevBtn = document.getElementById("prev-btn");
-  const navButtons = document.querySelector(".nav-buttons");
 
   let currentPage = -1; // -1 = cover
 
-  // Make sure all pages are hidden
-  function hideAllPages() {
-    pages.forEach(p => p.style.display = "none");
-  }
-
   function showCover() {
-    hideAllPages();
-    cover.style.display = "block";
-    book.style.display = "none";
-    navButtons.style.display = "none";
+    pages.forEach(p => p.style.display = "none");
+    book.classList.add("hidden");
+    cover.classList.remove("hidden");
     currentPage = -1;
+    nextBtn.style.display = "none";
+prevBtn.style.display = "none";
+      document.querySelector('.nav-buttons').style.display = 'none';
   }
 
   function showPage(index) {
-    hideAllPages();
-    cover.style.display = "none";
-    book.style.display = "block";
+    pages.forEach(p => p.style.display = "none");
     pages[index].style.display = "block";
-    navButtons.style.display = "flex";
+    cover.classList.add("hidden");
+    book.classList.remove("hidden");
     currentPage = index;
+    nextBtn.style.display = "block";
+prevBtn.style.display = "block";
+  document.querySelector('.nav-buttons').style.display = 'flex';
   }
 
-  openBtn.addEventListener("click", () => {
-    showPage(0);
-  });
+openBtn.addEventListener("click", () => {
+  showPage(0);
+});
 
   nextBtn.addEventListener("click", () => {
     if (currentPage === pages.length - 1) {
-      showCover();
+      showCover(); // loop back to cover
     } else {
       showPage(currentPage + 1);
     }
@@ -52,13 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   prevBtn.addEventListener("click", () => {
     if (currentPage === 0) {
-      showCover();
+      showCover(); // back from first page
     } else {
       showPage(currentPage - 1);
     }
   });
-
-  // Initial state
-  showCover();
 });
-
