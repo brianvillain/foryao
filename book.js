@@ -12,37 +12,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const pages = document.querySelectorAll(".page");
   const nextBtn = document.getElementById("next-btn");
   const prevBtn = document.getElementById("prev-btn");
+  const navButtons = document.querySelector(".nav-buttons");
 
   let currentPage = -1; // -1 = cover
 
-  function showCover() {
+  // Make sure all pages are hidden
+  function hideAllPages() {
     pages.forEach(p => p.style.display = "none");
-    book.classList.add("hidden");
-    cover.classList.remove("hidden");
+  }
+
+  function showCover() {
+    hideAllPages();
+    cover.style.display = "block";
+    book.style.display = "none";
+    navButtons.style.display = "none";
     currentPage = -1;
-    nextBtn.style.display = "none";
-prevBtn.style.display = "none";
-      document.querySelector('.nav-buttons').style.display = 'none';
   }
 
   function showPage(index) {
-    pages.forEach(p => p.style.display = "none");
+    hideAllPages();
+    cover.style.display = "none";
+    book.style.display = "block";
     pages[index].style.display = "block";
-    cover.classList.add("hidden");
-    book.classList.remove("hidden");
+    navButtons.style.display = "flex";
     currentPage = index;
-    nextBtn.style.display = "block";
-prevBtn.style.display = "block";
-  document.querySelector('.nav-buttons').style.display = 'flex';
   }
 
-openBtn.addEventListener("click", () => {
-  showPage(0);
-});
+  openBtn.addEventListener("click", () => {
+    showPage(0);
+  });
 
   nextBtn.addEventListener("click", () => {
     if (currentPage === pages.length - 1) {
-      showCover(); // loop back to cover
+      showCover();
     } else {
       showPage(currentPage + 1);
     }
@@ -50,9 +52,13 @@ openBtn.addEventListener("click", () => {
 
   prevBtn.addEventListener("click", () => {
     if (currentPage === 0) {
-      showCover(); // back from first page
+      showCover();
     } else {
       showPage(currentPage - 1);
     }
   });
+
+  // Initial state
+  showCover();
 });
+
