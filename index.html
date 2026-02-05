@@ -184,6 +184,16 @@
   align-items: center;
   z-index: 10;
 }
+    .nav-buttons {
+  position: relative;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
   </style>
 </head>
 
@@ -344,16 +354,20 @@ So those things don’t really matter to me anymore.</p>
     <div class="page hidden" id="page-4">
   <h1>What I Want to Say in My Own Voice</h1>
 
-<div class="page-content" style="position: relative; text-align: center;">
-  <img src="covien2.PNG" style="width: 160px; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">
+<div class="page hidden" id="page-4">
+  <h1>What I Want to Say in My Own Voice</h1>
 
-  <audio controls style="max-width: 320px; z-index: 1; position: relative;">
-    <source src="confession.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <div class="page-content" style="position: relative; min-height: 180px; padding: 40px 0;">
+    <img src="covien2.PNG" style="width: 160px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);">
+    
+    <audio controls style="max-width: 320px; position: relative; z-index: 2;">
+      <source src="confession.mp3" type="audio/mpeg">
+    </audio>
 
-  <img src="covien1.PNG" style="width: 160px; position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
+    <img src="covien1.PNG" style="width: 160px; position: absolute; right: 0; top: 50%; transform: translateY(-50%);">
+  </div>
 </div>
+
 
 
 
