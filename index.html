@@ -184,25 +184,6 @@
   align-items: center;
   z-index: 10;
 }
-.voice-wrapper {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-
-.voice-chibi {
-  width: 160px;
-  height: auto;
-}
-
-.voice-audio {
-  max-width: 320px;
-}
-
   </style>
 </head>
 
@@ -363,15 +344,17 @@ So those things don’t really matter to me anymore.</p>
     <div class="page hidden" id="page-4">
   <h1>What I Want to Say in My Own Voice</h1>
 
- <div class="page-content">
-  <div class="voice-wrapper">
-    <img src="covien2.PNG" class="voice-chibi">
-    <audio controls class="voice-audio">
-      <source src="confession.mp3" type="audio/mpeg">
-    </audio>
-    <img src="covien1.PNG" class="voice-chibi">
-  </div>
+<div class="page-content" style="position: relative; text-align: center;">
+  <img src="covien2.PNG" style="width: 160px; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">
+
+  <audio controls style="max-width: 320px; z-index: 1; position: relative;">
+    <source src="confession.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <img src="covien1.PNG" style="width: 160px; position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
 </div>
+
 
 
     <div class="page hidden" id="page-5">
