@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
     book.classList.add("hidden");
     cover.classList.remove("hidden");
     currentPage = -1;
+    nextBtn.style.display = "none";
+prevBtn.style.display = "none";
   }
 
   function showPage(index) {
@@ -28,6 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
     cover.classList.add("hidden");
     book.classList.remove("hidden");
     currentPage = index;
+    nextBtn.style.display = "block";
+prevBtn.style.display = "block";
+
   }
 
 openBtn.addEventListener("click", () => {
