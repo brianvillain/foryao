@@ -118,9 +118,9 @@ main {
   padding-top: 20vh;
 }
 
-#cover-screen h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
+.cover-message h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   color: #ffcce0;
 }
 
