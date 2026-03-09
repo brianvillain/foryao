@@ -1,4 +1,4 @@
-const allowed = prompt("This page is protected. Enter the password to continue:") === "Iloveyou";
+const allowed = prompt("I changed password. Guess.") === "unfound";
 if (!allowed) {
   document.body.innerHTML = "<h2 style='text-align:center; color: red; margin-top: 20%; font-family: sans-serif;'>Access Denied</h2>";
   throw new Error("Unauthorized access");
